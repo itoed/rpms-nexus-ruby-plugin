@@ -4,8 +4,16 @@ Release:        %{_release}
 Summary:
 License:        None
 BuildArch:      %{_arch}
+Source0:        %{name}-%{version}-bundle.zip
+
+%define        __spec_install_post %{nil}
+%define          debug_package %{nil}
+%define        __os_install_post %{_dbpath}/brp-compress
 
 %description
+
+%prep
+%setup -q -c -T -b 0
 
 %install
 rm -rf %{buildroot}
