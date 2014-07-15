@@ -21,7 +21,7 @@ Source:         %{name}-%{version}-bundle.zip
 rm -rf %{buildroot}
 
 install -dm 755 %{buildroot}/%{plugindir}
-cp -r %{builddir}/%{name}-%{version} %{plugindir}
+cp -r %{_builddir}/%{name}-%{version} %{buildroot}/%{plugindir}
 
 %files
 %defattr(-,nexus,nexus,-)
