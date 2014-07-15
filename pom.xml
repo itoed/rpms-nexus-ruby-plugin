@@ -46,6 +46,8 @@
                         <configuration>
                             <goals>install -D maven.test.skip</goals>
                             <connectionUrl>scm:git:git@gitlab.pacman.fghijk.local:nexus-oss/nexus-ruby-support.git</connectionUrl>
+                            <scmVersion>nexus-ruby-support-1.4.1</scmVersion>
+                            <scmVersionType>tag</scmVersionType>
                         </configuration>
                     </execution>
                 </executions>
