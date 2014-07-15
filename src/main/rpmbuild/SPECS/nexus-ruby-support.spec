@@ -1,7 +1,7 @@
 Name:           %{_name}
 Version:        %{_version}
 Release:        %{_release}
-Summary:
+Summary:        Nexus Ruby Plugin
 License:        None
 BuildArch:      %{_arch}
 Source0:        %{name}-%{version}-bundle.zip
