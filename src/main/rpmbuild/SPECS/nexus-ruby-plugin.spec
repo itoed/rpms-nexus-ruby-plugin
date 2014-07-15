@@ -6,10 +6,6 @@ License:        None
 BuildArch:      %{_arch}
 Source:         %{name}-%{version}-bundle.zip
 
-%define        __spec_install_post %{nil}
-%define          debug_package %{nil}
-%define        __os_install_post %{_dbpath}/brp-compress
-
 %define         plugindir /usr/local/sonatype-work/nexus/plugin-repository
 
 %description
