@@ -20,8 +20,8 @@ Source:         %{name}-%{version}-bundle.zip
 %install
 rm -rf %{buildroot}
 
-install -dm 755 %{buildroot}/%{plugindir}
-cp -r %{_builddir}/%{name}-%{version} %{buildroot}/%{plugindir}
+install -dm 755 %{buildroot}%{plugindir}
+cp -r %{_builddir}/%{name}-%{version} %{buildroot}%{plugindir}
 
 %files
 %defattr(-,nexus,nexus,-)
