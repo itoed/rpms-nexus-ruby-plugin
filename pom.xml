@@ -55,7 +55,7 @@
                 <executions>
                     <execution>
                         <id>copy-bundle-zip</id>
-                        <phase>generate-resource</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
@@ -66,29 +66,6 @@
                                     <file>${project.build.directory}/checkout/nexus-ruby-plugin/target/nexus-ruby-plugin-${project.version}-bundle.zip</file>
                                 </resource>
                             </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>net.fghijk.maven.plugins</groupId>
-                <artifactId>fghijk-bash-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>rpmbuild</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <script>
-                                rpmbuild -ba --define '_topdir ${project.build.outputDirectory}' \
-                                --define '_name ${project.artifactId}' \
-                                --define '_version ${project.version}' \
-                                --define '_release ${rpm.release}' \
-                                --define '_arch ${rpm.arch}' \
-                                ${project.build.outputDirectory}/SPECS/${project.artifactId}.spec
-                            </script>
                         </configuration>
                     </execution>
                 </executions>
