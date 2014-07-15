@@ -4,7 +4,7 @@ Release:        %{_release}
 Summary:        Nexus Ruby Plugin
 License:        None
 BuildArch:      %{_arch}
-Source0:        %{name}-%{version}-bundle.zip
+Source:         %{name}-%{version}-bundle.zip
 
 %define        __spec_install_post %{nil}
 %define          debug_package %{nil}
@@ -13,7 +13,7 @@ Source0:        %{name}-%{version}-bundle.zip
 %description
 
 %prep
-%setup -q -c -T -b 0
+%setup -q
 
 %install
 rm -rf %{buildroot}
