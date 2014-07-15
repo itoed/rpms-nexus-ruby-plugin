@@ -60,7 +60,7 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.outputDirectory}/SOURCES</outputDirectory>
+                            <outputDirectory>${project.build.outputDirectory}/SOURCES</outputDirectory>
                             <resources>
                                 <resource>
                                     <file>${project.build.directory}checkout/nexus-ruby-plugin/target/nexus-ruby-plugin-${project.version}-bundle.zip</file>
