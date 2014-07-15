@@ -15,13 +15,13 @@ Source:         %{name}-%{version}-bundle.zip
 %description
 
 %prep
-%setup -q
+%setup -q -c
 
 %install
 rm -rf %{buildroot}
 
 install -dm 755 %{buildroot}%{plugindir}
-cp -r %{_builddir}/%{name}-%{version} %{buildroot}%{plugindir}
+cp -r %{name}-%{version} %{buildroot}%{plugindir}
 
 %files
 %defattr(-,nexus,nexus,-)
