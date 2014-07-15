@@ -44,7 +44,7 @@
                             <goal>bootstrap</goal>
                         </goals>
                         <configuration>
-                            <goals>package -D maven.test.skip</goals>
+                            <goals>install -D maven.test.skip</goals>
                             <connectionUrl>scm:git:git@gitlab.pacman.fghijk.local:nexus-oss/nexus-ruby-support.git</connectionUrl>
                         </configuration>
                     </execution>
