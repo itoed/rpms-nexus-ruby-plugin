@@ -22,5 +22,5 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 
 %changelog
-* Thu Jan 1 1970 Firstname Lastname <author@example.com> - 0.1-1
+* Tue Jul 15 2014 Eduardo Ito <ed@fghijk.local> - 1.4.1-1
 - Initial release
