@@ -10,14 +10,15 @@
 
     <groupId>net.fghijk.rpms</groupId>
     <artifactId>nexus-ruby-plugin</artifactId>
-    <version>1.4.1</version>
+    <version>1.4.1-1</version>
     <packaging>rpm</packaging>
 
     <name>nexus-ruby-support</name>
-    <description>An RPM package</description>
+    <description>Plugin to enhance Nexus with Ruby support</description>
 
     <properties>
-        <rpm.release>1.el6</rpm.release>
+        <rpm.version>1.4.1</rpm.version>
+        <rpm.release>1</rpm.release>
         <rpm.arch>noarch</rpm.arch>
     </properties>
 
@@ -32,7 +33,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-scm-plugin</artifactId>
-                <version>1.9</version>
                 <executions>
                     <execution>
                         <id>bootstrap</id>
@@ -43,7 +43,7 @@
                         <configuration>
                             <goals>install -D maven.test.skip</goals>
                             <connectionUrl>scm:git:git@gitlab.pacman.fghijk.local:thirdparty/nexus-ruby-support.git</connectionUrl>
-                            <scmVersion>nexus-ruby-support-${project.version}</scmVersion>
+                            <scmVersion>nexus-ruby-support-${rpm.version}</scmVersion>
                             <scmVersionType>tag</scmVersionType>
                         </configuration>
                     </execution>
@@ -65,7 +65,7 @@
                                 <resource>
                                     <directory>${project.build.directory}/checkout/nexus-ruby-plugin/target</directory>
                                     <includes>
-                                        <include>nexus-ruby-plugin-${project.version}-bundle.zip</include>
+                                        <include>nexus-ruby-plugin-${rpm.version}-bundle.zip</include>
                                     </includes>
                                 </resource>
                             </resources>
@@ -87,7 +87,7 @@
                             <script>
                                 rpmbuild -ba --define '_topdir ${project.build.outputDirectory}' \
                                 --define '_name ${project.artifactId}' \
-                                --define '_version ${project.version}' \
+                                --define '_version ${rpm.version}' \
                                 --define '_release ${rpm.release}' \
                                 --define '_arch ${rpm.arch}' \
                                 ${project.build.outputDirectory}/SPECS/${project.artifactId}.spec
@@ -102,7 +102,7 @@
                 <artifactId>fghijk-rpm-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <outputRpm>${project.build.outputDirectory}/RPMS/${rpm.arch}/${project.build.finalName}-${rpm.release}.${rpm.arch}.rpm</outputRpm>
+                    <outputRpm>${project.build.outputDirectory}/RPMS/${rpm.arch}/${project.build.finalName}.${rpm.arch}.rpm</outputRpm>
                 </configuration>
             </plugin>
         </plugins>
