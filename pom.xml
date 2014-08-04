@@ -20,6 +20,7 @@
         <rpm.version>1.4.1</rpm.version>
         <rpm.release>1</rpm.release>
         <rpm.arch>noarch</rpm.arch>
+        <scm.host>gitlab.fghijk.net</scm.host>
     </properties>
 
     <build>
@@ -42,7 +43,7 @@
                         </goals>
                         <configuration>
                             <goals>install -D maven.test.skip</goals>
-                            <connectionUrl>scm:git:git@gitlab.pacman.fghijk.local:thirdparty/nexus-ruby-support.git</connectionUrl>
+                            <connectionUrl>scm:git:git@${scm.host}:thirdparty/nexus-ruby-support.git</connectionUrl>
                             <scmVersion>nexus-ruby-support-${rpm.version}</scmVersion>
                             <scmVersionType>tag</scmVersionType>
                         </configuration>
